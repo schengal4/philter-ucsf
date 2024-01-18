@@ -3,6 +3,7 @@ import warnings
 import json
 import os
 import nltk
+nltk.download("averaged_perceptron_tagger")
 import itertools
 import chardet
 import pickle
@@ -2426,5 +2427,3 @@ class Philter:
 
         items.sort(key=lambda x: x["count"], reverse=True)
         json.dump(items, open(sorted_path, "w"), indent=4)
-
-
