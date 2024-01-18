@@ -1,2 +1,3 @@
-If you use this software for any publication, please cite:
-Norgeot, B., Muenzen, K., Peterson, T.A. et al. Protected Health Information filter (Philter): accurately and securely de-identifying free-text clinical notes. npj Digit. Med. 3, 57 (2020). https://doi.org/10.1038/s41746-020-0258-y
+This app removes Personally Identifiable Information (PII) and Protected Health Information (PHI) from user-uploaded files. It uses Philter, an open-source software designed to accurately and securely de-identify free-text clinical notes. It uses a combination of rule-based and statistical natural language processing (NLP) approaches to remove PII/PHI from clinical documents. It can handle a wide range of PII/PHI types and maintains the original structure of the text by replacing PII/PHI with obfuscated tokens (series of asterisks) of the same length.
+
+See "Protected Health Information filter (Philter): accurately and securely de-identifying free-text clinical notes" for the paper the Philter library is based on, and https://github.com/BCHSI/philter-ucsf/tree/master for the original code.
