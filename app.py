@@ -52,7 +52,7 @@ def deidentify(uploaded_file_name, uploaded_file_text):
 
 def main():
     st.title("Deidentify PHI in your file")
-    st.markdown("This app uses the [Philter](https://github.com/BCHSI/philter-ucsf) feature to deidentify PHI in your file.")
+    st.markdown("This app uses the [Philter](https://github.com/BCHSI/philter-ucsf) library to deidentify PHI in your file.")
     st.markdown("""
     ## Instructions
     1. Upload a file in .txt, .pdf, or .docx format.  
