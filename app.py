@@ -49,8 +49,11 @@ def deidentify(uploaded_file_name, uploaded_file_text):
         os.remove(f"files/outputs/{file_unique_name}")
 
         return output
-
+def initialize_session_state():
+    if "deidentified_file" not in st.session_state:
+        st.session_state["deidentified_file"] = None
 def main():
+    initialize_session_state()
     st.title("Deidentify PHI in your file")
     st.markdown("This app uses the [Philter](https://github.com/BCHSI/philter-ucsf) library to deidentify PHI in your file.")
     st.markdown("""
@@ -62,9 +65,12 @@ def main():
     uploaded_file_name, uploaded_file_text = upload_file()
     initial_time = time.time()
     output = deidentify(uploaded_file_name, uploaded_file_text)
-    if output:
+    if output is not None and output.strip() != "": 
+        st.session_state["deidentified_file"] = output
+    if st.session_state["deidentified_file"] is not None:
         st.markdown("## Output (Deidentified file)")
-        st.text(output)
+        st.text(st.session_state["deidentified_file"])
+        st.download_button("Download file as .txt", data=st.session_state["deidentified_file"], file_name="deidentified_file.txt")
     end_time = time.time()
     time_taken = end_time - initial_time
     print(time_taken)
