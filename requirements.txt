@@ -1,4 +1,4 @@
-# Used Python 3.10
+# Used Python 3.10.11
 chardet==3.0.4
 nltk==3.8.1
 numpy==1.26.3

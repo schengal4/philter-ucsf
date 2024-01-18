@@ -51,10 +51,20 @@ def deidentify(uploaded_file_name, uploaded_file_text):
         return output
 
 def main():
+    st.title("Deidentify PHI in your file")
+    st.markdown("This app uses the [Philter](https://github.com/BCHSI/philter-ucsf) feature to deidentify PHI in your file.")
+    st.markdown("""
+    ## Instructions
+    1. Upload a file in .txt, .pdf, or .docx format.  
+    2. After a couple seconds, the file will be deidentified and the output will be displayed.  
+    """)
+    st.markdown("## Upload your file")
     uploaded_file_name, uploaded_file_text = upload_file()
     initial_time = time.time()
     output = deidentify(uploaded_file_name, uploaded_file_text)
-    st.text(output)
+    if output:
+        st.markdown("## Output (Deidentified file)")
+        st.text(output)
     end_time = time.time()
     time_taken = end_time - initial_time
     print(time_taken)
