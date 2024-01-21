@@ -60,8 +60,7 @@ def initialize_session_state():
         st.session_state["deidentified_note"] = None
 
 # This is a test report with fake PHI/PII to test the app.
-EXAMPLE_REPORT = """
-Note: The PHI/PII in this note are not from a real patient. This note is for testing/demonstration purposes.
+EXAMPLE_REPORT = """Note: The PHI/PII in this note are not from a real patient. This note is for testing/demonstration purposes.
 
 **Patient Name:** John Doe  
 **Date of Birth:** 02/14/1983  
